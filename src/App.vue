@@ -35,8 +35,9 @@ body{
 
 .header{
   height: 80vh;
-  background-color :red;
-  background-image : url("http://images.hellokids.com/_uploads/_tiny_galerie/20090625/red-yugioh-wallpaper-source_ui0.jpg");
+  background-color :#252129;
+  background-image : url("https://cdn.dribbble.com/users/470545/screenshots/3210709/media/4db811f2a9517d7ba62df2a0e91d8227.jpg?compress=1&resize=800x600&vertical=top");
+  background-repeat: no-repeat;
   margin-bottom: 50px;
 }
 </style>

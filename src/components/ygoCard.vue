@@ -2,7 +2,7 @@
   <div class="card">
     <!-- <img src="https://images.ygoprodeck.com/images/cards/30983281.jpg"> -->
     <img :src=img>
-    <h1>{{ name }}</h1>
+    <h3>{{ name }}</h3>
     <!-- <div class="card-text">
       <p><strong>atk : </strong>2000</p>
       <p><strong>def : </strong>2500</p>
@@ -57,7 +57,7 @@ export default {
   margin : auto;
 }
 
- h1{
+h3{
   font-size : 1rem;
 }
 
@@ -66,5 +66,40 @@ p{
   text-align: left;
   margin : 10px;
 } 
+
+@media screen and (max-width:700px) {
+  .card{
+    max-width: 20vw;
+  }
+} 
+
+@media screen and (max-width:600px) {
+  .card{
+    max-width: 20vw;
+    padding :  10px 10px;
+    margin : 10px;
+  }
+
+  h3{
+  font-size : 0.8rem;
+  }
+} 
+
+
+@media screen and (max-width:400px) {
+
+  h3{
+  font-size : 0.7rem;
+  margin : 10px auto;
+  }
+
+} 
+
+/*@media screen and (max-width:400px) {
+  .card{
+    max-width: 50vw;
+  }
+} */
+
 
 </style>

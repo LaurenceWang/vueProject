@@ -1,24 +1,12 @@
 <template>
   <div class="card">
-    <!-- <img src="https://images.ygoprodeck.com/images/cards/30983281.jpg"> -->
     <img :src=img>
     <h3>{{ name }}</h3>
-    <!-- <div class="card-text">
-      <p><strong>atk : </strong>2000</p>
-      <p><strong>def : </strong>2500</p>
-      <p><strong>race : </strong>Dragon</p>
-      <p>1 Tuner + 1+ non-Tuner monsters\r\nIf this card is Synchro Summoned: You can Special Summon 1 Level 2 or lower Tuner from your GY. </p>
-    </div> -->
   </div>
 </template>
 
 <script>
 
-//import {getYGOData} from "../services/api/ygoAPI.js"
-
-/*let data = getYGOData();
-console.log(data)*/
-//getYGOData();
 
 export default {
   name: 'ygoCard',

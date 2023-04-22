@@ -1,8 +1,8 @@
 <template>
   <h2>Cards gallery</h2>
-  <galleryOptions v-model:search="effectiveSearch" v-model:cardsFilterType="cardsFilterType" v-model:cardsSortType="cardsSortType"></galleryOptions>
+  <galleryOptions v-model:search="effectiveSearch" v-model:cardsFilterType="cardsFilterType" v-model:cardsSortType="cardsSortType" v-model:showCards="showCards" @change="resetShowCards"></galleryOptions>
   
-  <div class="gallery-options">
+  <!-- <div class="gallery-options">
 
     <div>
       <input type="text" class="search-bar" v-model="search" @keydown.enter="searchFilter"
@@ -12,8 +12,6 @@
       </datalist>
       <span class="search-icon"><img src="http://www.endlessicons.com/wp-content/uploads/2012/12/search-icon.png"></span>
     </div>
-
-    <!-- <button class="emptyBtn" v-show="isSearching == true" v-on:click="emptySearch">empty</button> -->
     <button class="emptyBtn" v-if="effectiveSearch" v-on:click="emptySearch">empty</button>
 
     <div class="select">
@@ -37,14 +35,14 @@
       </select>
     </div>
 
-  </div>
+  </div> -->
 
 
   <div class="gallery">
     <ygoCard v-for="card in cardsShownData" v-bind:key="card.id" v-bind:name="card.name"
       v-bind:img="card.card_images[0].image_url" />
   </div>
-  <div class="spinner" v-show="isVisible == true && cardsOrganizedData.length == 0 && effectiveSearch==''" ></div>
+  <div class="spinner" v-if="!effectiveSearch" v-show="cardsOrganizedData.length == 0" ></div>
   <!-- <div class="noResult" v-show="cardsOrganizedData.length == 0 && ygoData.length != 0">Aucun résultat trouvé</div> -->
   <div class="noResult" v-if="effectiveSearch" v-show="cardsOrganizedData.length == 0">Aucun résultat trouvé</div>
   <div class="spinner" v-show="isVisible == true && !cardsOrganizedData.length == 0"></div>
@@ -95,7 +93,7 @@ export default {
   data() {
     return {
       ygoData: [],
-      isVisible: true,
+      isVisible: false,
       effectiveSearch: "",
       search: "",
       //isSearching: false,
@@ -133,7 +131,7 @@ export default {
         }, 800)
 
       }else{
-        this.isVisible = false;
+        //this.isVisible = false;
       }
 
 
@@ -166,14 +164,15 @@ export default {
 
     resetShowCards() {
       this.showCards = 25;
+      //this.isVisible = false;
       console.log("reset : " + this.showCards)
     },
 
     emptySearch() {
       this.search = "";
-      //this.isSearching = false;
       this.effectiveSearch = "";
       this.showCards = 25;
+      
     }
   }
 }

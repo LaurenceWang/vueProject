@@ -5,7 +5,7 @@
 			<input type="text" class="search-bar" :value="search" @keydown.enter="onSearchChanged"
 				placeholder="Chercher une carte" list='listid'>
 			<datalist id="listid">
-				
+
 				<option>{{ this.storageSearch }}</option>
 			</datalist>
 			<span class="search-icon"><img
@@ -19,13 +19,48 @@
 			<select :value="cardsFilterType" @change="onCardsFilterTypeChanged" id="card-sort">
 				<option value="">All</option>
 				<option value="Monster">Monster</option>
-				<option value="Spell">Spell</option>
-				<option value="Trap">Trap</option>
+				<option value="Spell Card">Spell Card</option>
+				<option value="Trap Card">Trap Card</option> 
+				<option value ="Skill Card">Skill Card</option>
+
+			</select>
+		</div>
+
+		<div class="select" v-if="cardsFilterType.includes('Monster')">
+			<label for="card-sort">Type :</label>
+			<select :value="cardsFilterType" @change="onCardsFilterTypeChanged" id="card-sort">
+				<option value ="Effect Monster">Effect Monster</option>
+				<option value ="Flip Effect Monster">Flip Effect Monster</option>
+				<option value ="Fusion Monster">Fusion Monster</option>
+				<option value ="Gemini Monster">Gemini Monster</option>
+				<option value ="Link Monster">Link Monster</option>
+				<option value ="Normal Monster">Normal Monster</option>
+				<option value ="Normal Tuner Monster">Normal Tuner Monster</option>
+				<option value ="Pendulum Effect Fusion Monster">Pendulum Effect Fusion Monster</option>
+				<option value ="Pendulum Effect Monster">Pendulum Effect Monster</option>
+				<option value ="Pendulum Effect Ritual Monster">Pendulum Effect Ritual Monster</option>
+				<option value ="Pendulum Flip Effect Monster">Pendulum Flip Effect Monster</option>
+				<option value ="Pendulum Normal Monster">Pendulum Normal Monster</option>
+				<option value ="Pendulum Tuner Effect Monster">Pendulum Tuner Effect Monster</option>
+				<option value ="Ritual Effect Monster">Ritual Effect Monster</option>
+				<option value ="Ritual Monster">Ritual Monster</option>
+				<option value ="Spirit Monster">Spirit Monster</option>
+				<option value ="Synchro Monster">Synchro Monster</option>
+				<option value ="Synchro Pendulum Effect Monster">Synchro Pendulum Effect Monster</option>
+				<option value ="Synchro Tuner Monster">Synchro Tuner Monster</option>
+				<option value ="Token">Token</option>
+				<option value ="Toon Monster">Toon Monster</option>
+				<option value ="Tuner Monster">Tuner Monster</option>
+				<option value ="Union Effect Monster">Union Effect Monster</option>
+				<option value ="XYZ Monster">XYZ Monster</option>
+				<option value ="XYZ Pendulum Effect Monster">XYZ Pendulum Effect Monster</option>
+
 			</select>
 		</div>
 
 
-		<div v-if="cardsFilterType=='Monster'" class="select">
+
+		<div v-if="cardsFilterType.includes('Monster')" class="select">
 			<label for="card-sort">Sort :</label>
 			<select :value="cardsSortType" @change="onCardsSortTypeChanged" id="card-sort">
 				<option value=atk>atk</option>
@@ -44,7 +79,7 @@ export default {
 	name: 'galleryOptions',
 
 	data() {
-		return{
+		return {
 			storageSearch: localStorage.getItem("search") || ""
 		}
 	},
@@ -61,9 +96,6 @@ export default {
 		storageSearch: function (newSearch) {
 			localStorage.setItem("search", newSearch);
 		},
-		// cardsFilterType: function(newCardsFilterType) {
-		// 	localStorage.setItem("dogsSortType", newCardsFilterType)
-		// }
 	},
 
 	methods: {
@@ -72,10 +104,10 @@ export default {
 		},
 
 		onSearchChanged(event) {
-			this.$emit('update:search', event.target.value);
-			//localStorage.setItem("search", event.target.value);
-			this.storageSearch =  event.target.value;
-			
+			if (event.target.value.length >= 3) {
+				this.$emit('update:search', event.target.value);
+				this.storageSearch = event.target.value;
+			}
 		},
 
 		onCardsFilterTypeChanged(event) {
@@ -84,8 +116,6 @@ export default {
 
 		onCardsSortTypeChanged(event) {
 			this.$emit('update:cardsSortType', event.target.value);
-			//this.storageSearch = event.target.value;
-			//localStorage.setItem("search",  event.target.value );
 		},
 	}
 }
@@ -117,17 +147,14 @@ export default {
 	position: relative;
 }
 
-/* .search-bar:hover{
-	-webkit-appearance: none;
-} */
 
 input::-webkit-calendar-picker-indicator {
-  opacity: 0;
+	opacity: 0;
 }
 
 [list]::-webkit-calendar-picker-indicator {
-    display: none;
-  }
+	display: none;
+}
 
 .search-bar:focus {
 	border: 1px solid #008ABF;

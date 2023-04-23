@@ -2,7 +2,7 @@
   <h2>Cards gallery</h2>
   <galleryOptions v-model:search="effectiveSearch" v-model:cardsFilterType="cardsFilterType" v-model:cardsSortType="cardsSortType" v-model:showCards="showCards" @change="resetShowCards"></galleryOptions>
   
-  <div class="gallery">
+  <div class="gallery container">
     <ygoCard v-for="card in cardsShownData" v-bind:key="card.id" v-bind:name="card.name"
       v-bind:img="card.card_images[0].image_url" />
   </div>
@@ -112,7 +112,7 @@ export default {
  
 <style scoped>
 .gallery {
-  width: 100%;
+  /* width: 100%;  */
   display: flex;
   justify-content: center;
   flex-wrap: wrap;

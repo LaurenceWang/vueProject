@@ -31,6 +31,7 @@ export default {
   max-width: 12vw;
   /*border : solid 1px;*/
   border-radius: 5%;
+  overflow-wrap: break-word;
   -webkit-box-shadow: 0px 0px 34px -14px rgba(0,0,0,0.20); 
   box-shadow: 0px 0px 34px -14px rgba(0,0,0,0.20);
 }
@@ -38,6 +39,8 @@ export default {
 .card:hover{
   -webkit-box-shadow: 0px 0px 34px -14px rgba(0,0,0,0.45); 
   box-shadow: 0px 0px 34px -14px rgba(0,0,0,0.45);
+  transform:scale(1.02);
+  transition: transform .3s ease;
 }
 
 .card img{
@@ -55,6 +58,25 @@ p{
   margin : 10px;
 } 
 
+@media screen and (max-width:1200px) {
+  h3{
+  font-size : 0.9rem;
+  }
+
+  .card{
+    max-width: 15vw;
+    margin: 20px 10px;
+  }
+} 
+
+@media screen and (max-width:992px) {
+  
+  .card{
+    max-width: 18vw;
+    margin: 20px 10px;
+  }
+} 
+
 @media screen and (max-width:700px) {
   .card{
     max-width: 20vw;
@@ -63,7 +85,7 @@ p{
 
 @media screen and (max-width:600px) {
   .card{
-    max-width: 20vw;
+    max-width: 26vw;
     padding :  10px 10px;
     margin : 10px;
   }
@@ -75,6 +97,11 @@ p{
 
 
 @media screen and (max-width:400px) {
+
+  .card{
+   
+    margin: 5px;
+  }
 
   h3{
   font-size : 0.7rem;

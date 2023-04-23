@@ -1,5 +1,5 @@
 <template>
-	<div class="gallery-options">
+	<div class="gallery-options container">
 
 		<div>
 			<input type="text" class="search-bar" :value="search" @keydown.enter="onSearchChanged"
@@ -22,6 +22,7 @@
 				<option value="Spell Card">Spell Card</option>
 				<option value="Trap Card">Trap Card</option> 
 				<option value ="Skill Card">Skill Card</option>
+				<option value ="Token">Token</option>
 
 			</select>
 		</div>
@@ -48,7 +49,6 @@
 				<option value ="Synchro Monster">Synchro Monster</option>
 				<option value ="Synchro Pendulum Effect Monster">Synchro Pendulum Effect Monster</option>
 				<option value ="Synchro Tuner Monster">Synchro Tuner Monster</option>
-				<option value ="Token">Token</option>
 				<option value ="Toon Monster">Toon Monster</option>
 				<option value ="Tuner Monster">Tuner Monster</option>
 				<option value ="Union Effect Monster">Union Effect Monster</option>
@@ -126,6 +126,8 @@ export default {
 	margin: 50px auto;
 	display: flex;
 	justify-content: center;
+	align-items: center;
+	flex-wrap: wrap;
 }
 
 .search-container {
@@ -139,7 +141,7 @@ export default {
 	max-width: 100%;
 	margin: 0 auto;
 	height: 45px;
-	padding: 0 20px;
+	padding: 20px;
 	font-size: 1rem;
 	border: 1px solid #D0CFCE;
 	outline: none;
@@ -181,14 +183,13 @@ input::-webkit-calendar-picker-indicator {
 }
 
 .select {
-	margin: 0px 20px;
-	width: 350px;
+	margin: 10px 20px;
 	display: flex;
 	align-items: center;
 }
 
 .select label {
-	width: 60px;
+	width: 65px;
 	margin: 0px 20px;
 }
 

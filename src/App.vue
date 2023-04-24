@@ -1,21 +1,23 @@
 <template>
-  <navigationBar />
+   <!-- <navigationBar /> -->
 
-  <header class="header">
-  </header>
-  <ygoGallery />
+  <!-- <header class="header">
+  </header>  -->
+  
+  <router-view></router-view>
+  <!-- <ygoGallery /> -->
 </template>
 
 <script>
 
-import ygoGallery from './components/ygoGallery.vue'
-import navigationBar from './components/navigationBar.vue'
+//import ygoGallery from './components/ygoGallery.vue'
+//import navigationBar from './components/navigationBar.vue'
 
 export default {
   name: 'App',
   components: {
-    ygoGallery,
-    navigationBar,
+    //ygoGallery,
+    //navigationBar,
   }
 }
 </script>
@@ -40,7 +42,7 @@ body {
   /* margin-top: 60px; */
 }
 
-.header {
+/* .header {
   height: 80vh;
   background-color: #252129;
   background-image: url("https://cdn.dribbble.com/users/470545/screenshots/3210709/media/4db811f2a9517d7ba62df2a0e91d8227.jpg?compress=1&resize=800x600&vertical=top");
@@ -49,16 +51,13 @@ body {
   background-size:auto;
 }
 
-/* .container{
-  width:1320px;
-}    */
 
 @media screen and (max-width:992px) {
    .header{
     background-position:center;
     
    }
-}
+} */
 
 @media screen and (min-width:1400px) {
   .container {

@@ -1,8 +1,11 @@
 <template>
+  <router-link :to="{name: 'cardDetails', params:{cardId: id}}">
   <div class="card">
     <img :src=img>
     <h3>{{ name }}</h3>
+  
   </div>
+</router-link> 
 </template>
 
 <script>
@@ -13,7 +16,8 @@ export default {
   
   props: {
     name: String,
-    img : {type: String, default:"https://images.ygoprodeck.com/images/cards/30983281.jpg"}
+    img : {type: String, default:"https://images.ygoprodeck.com/images/cards/30983281.jpg"},
+    id: Number,
   }
 }
 </script>
@@ -21,6 +25,11 @@ export default {
 
 
 <style scoped>
+
+a{
+  text-decoration: none;
+  color: #2c3e50;
+}
 
 .card{
   /* display:flex;

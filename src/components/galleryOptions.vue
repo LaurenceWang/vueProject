@@ -73,7 +73,7 @@
 </template>
   
 <script>
-console.log("localsearch :" + localStorage.getItem("search"));
+
 
 export default {
 	name: 'galleryOptions',
@@ -218,7 +218,7 @@ select:focus {
 	font-size: 1rem;
 	color: #008ABF;
 	border-radius: 5px;
-	padding: 0px 10px;
+	padding: 10px;
 	margin-left: 15px;
 }
 

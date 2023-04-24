@@ -2,9 +2,13 @@
   <h2>Cards gallery</h2>
   <galleryOptions v-model:search="effectiveSearch" v-model:cardsFilterType="cardsFilterType" v-model:cardsSortType="cardsSortType" v-model:showCards="showCards" @change="resetShowCards"></galleryOptions>
   
+  
   <div class="gallery container">
-    <ygoCard v-for="card in cardsShownData" v-bind:key="card.id" v-bind:name="card.name"
-      v-bind:img="card.card_images[0].image_url" />
+    <ygoCard v-for="card in cardsShownData" v-bind:key="card.id" v-bind:id="card.id" v-bind:name="card.name"
+      v-bind:img="card.card_images[0].image_url"> 
+ 
+    </ygoCard>
+
   </div>
   <div class="spinner" v-if="!effectiveSearch" v-show="cardsOrganizedData.length == 0" ></div>
   <div class="noResult" v-if="effectiveSearch" v-show="cardsOrganizedData.length == 0">Aucun résultat trouvé</div>
@@ -15,7 +19,7 @@
 
 import ygoCard from './ygoCard.vue'
 import galleryOptions from './galleryOptions.vue'
-import { getYGOData } from "../services/api/ygoAPI.js"
+import { getYGOData } from "@/services/api/ygoAPI.js"
 
 
 export default {

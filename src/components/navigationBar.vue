@@ -3,7 +3,7 @@
 
       <nav class="nav container">
         <a href="#home" class="">Home</a>
-        <a href="#news">Gallery</a>
+        <router-link :to="{ name: 'cards' }">Gallery</router-link> 
         <a href="#contact">Popular</a>
         <a href="#about">Stats</a>
         <a href="javascript:void(0);" class="icon" onclick="myFunction()">

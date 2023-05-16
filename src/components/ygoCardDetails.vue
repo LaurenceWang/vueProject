@@ -3,7 +3,6 @@
 		<div class="card-detail">
 			<div class="card-img">
 				<img :src="img">
-				<!-- <img src={{ detailCardData.img  }}> -->
 			</div>
 
 			<div class="card-info">
@@ -51,12 +50,8 @@
 
 			</div>
 
-
-
-
 		</div>
 	</div>
-	<!-- <p>{{ this.ygoData }}</p> -->
 </template>
   
 <script>
@@ -76,14 +71,12 @@ export default {
 	// 	//
 	// },
 
+
 	data() {
 		return {
 			ygoData: [],
 			cardId: this.$route.params.cardId,
-			img: "https://images.ygoprodeck.com/images/cards/73262676.jpg",
-			//img: this.ygoData.name
-			//img : this.ygoData.image_url,
-			//img : this.ygoData.card_images[0].image_url,
+			img: String,
 		}
 	},
 	created() {
@@ -94,6 +87,8 @@ export default {
 		async getData() {
 			this.ygoData = await getYGOData();
 			this.ygoData = this.ygoData.filter(card => card.id == this.cardId)[0];
+			this.img = this.ygoData.card_images[0].image_url;
+
 		},
 
 	}
@@ -113,7 +108,7 @@ export default {
 	align-items: center;
 	background-color: #F6F4F5;
 	padding: 50px;
-	margin: 50px 0px;
+	margin: 30px 0px 50px 0px;
 }
 
 .card-img,

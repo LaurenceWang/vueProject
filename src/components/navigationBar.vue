@@ -4,8 +4,8 @@
       <nav class="nav container">
         <a href="#home" class="">Home</a>
         <router-link :to="{ name: 'cards' }">Gallery</router-link> 
-        <a href="#contact">Popular</a>
-        <a href="#about">Stats</a>
+        <a href="#rules">Rules</a>
+        <a href="#stats">Stats</a>
         <a href="javascript:void(0);" class="icon" onclick="myFunction()">
           <i class="fa fa-bars"></i>
         </a>

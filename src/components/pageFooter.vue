@@ -1,6 +1,7 @@
 <template>
 	<footer class="footer">
-		<p>© 2023 - Laurence Wang</p>
+		<p>© 2023 - Laurence Wang <br> header credit : <a href="https://dribbble.com/Tsuriel">Tsuriel</a></p>
+		
 	</footer>
 </template>
 	
@@ -30,6 +31,10 @@ export default {
 	justify-content: center;
 	align-items: center;
 	flex-direction: column;
+}
+
+.footer a{
+	color:#f6f4f5;
 }
 </style>
 	

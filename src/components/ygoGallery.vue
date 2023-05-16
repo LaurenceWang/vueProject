@@ -84,7 +84,6 @@ export default {
         setTimeout(() => {
           this.isVisible = false;
           this.showCards += 25;
-          console.log("test " + this.showCards)
         }, 800)
 
       }

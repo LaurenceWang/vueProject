@@ -1,6 +1,5 @@
 <template>
 	<header class="header">
-
 	</header>
   </template>
 	
@@ -8,7 +7,7 @@
   
   
   export default {
-	name: 'heroHeader',
+	name: 'pageHeader',
 	
   }
   

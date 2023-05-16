@@ -3,7 +3,7 @@
 
 		<div>
 			<input type="text" class="search-bar" :value="search" @keydown.enter="onSearchChanged"
-				placeholder="Chercher une carte" list='listid'>
+				placeholder="Search a card" list='listid'>
 			<datalist id="listid">
 
 				<option>{{ this.storageSearch }}</option>
@@ -34,7 +34,7 @@
 				<option value ="Flip Effect Monster">Flip Effect Monster</option>
 				<option value ="Fusion Monster">Fusion Monster</option>
 				<option value ="Gemini Monster">Gemini Monster</option>
-				<option value ="Link Monster">Link Monster</option>
+				<option value ="Gemini Monster">Link Monster</option>
 				<option value ="Normal Monster">Normal Monster</option>
 				<option value ="Normal Tuner Monster">Normal Tuner Monster</option>
 				<option value ="Pendulum Effect Fusion Monster">Pendulum Effect Fusion Monster</option>
@@ -54,7 +54,6 @@
 				<option value ="Union Effect Monster">Union Effect Monster</option>
 				<option value ="XYZ Monster">XYZ Monster</option>
 				<option value ="XYZ Pendulum Effect Monster">XYZ Pendulum Effect Monster</option>
-
 			</select>
 		</div>
 
@@ -137,7 +136,6 @@ export default {
 }
 
 .search-bar {
-	/* //width:100%; */
 	max-width: 100%;
 	margin: 0 auto;
 	height: 45px;

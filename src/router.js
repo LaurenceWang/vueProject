@@ -1,6 +1,7 @@
 import * as VueRouter from 'vue-router'
 import Gallery from "./pages/pageGallery.vue"
-//import cardDetails from "./components/ygoCardDetails.vue"
+//import CardStats from "./components/ygoDataVisu.vue"
+import CardStats from "./pages/pageStats.vue"
 import CardDetails from "./pages/pageCardDetails.vue"
 import Home from "./pages/pageHome.vue"
 
@@ -13,7 +14,7 @@ const routes = [{
 	{
 		path: '/home',
 		component: Home,
-		name: ""
+		name: "home"
 	},
 
 	{
@@ -26,6 +27,12 @@ const routes = [{
 		path: '/cards/:cardId',
 		component: CardDetails,
 		name: "cardDetails"
+	},
+
+	{
+		path: '/stats',
+		component: CardStats,
+		name: "cardStats"
 	},
 
 ]

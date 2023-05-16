@@ -2,13 +2,9 @@
   <div class="navbar" id="navbar">
 
       <nav class="nav container">
-        <a href="#home" class="">Home</a>
+        <router-link :to="{ name: 'home' }">Home</router-link> 
         <router-link :to="{ name: 'cards' }">Gallery</router-link> 
-        <a href="#rules">Rules</a>
-        <a href="#stats">Stats</a>
-        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-          <i class="fa fa-bars"></i>
-        </a>
+        <router-link :to="{ name: 'cardStats' }">Stats</router-link>
       </nav>
 
   </div>
@@ -18,7 +14,7 @@
 
 
 export default {
-  name: 'navigationBar',
+  name: 'pageNav',
 
   created() {
 
@@ -33,9 +29,7 @@ export default {
     stickyBar() {
       let navbar = document.getElementById("navbar");
       let sticky = navbar.offsetTop;
-
       
-
        if (window.pageYOffset >= sticky) {
           navbar.classList.add("sticky")
         } else {
@@ -54,6 +48,7 @@ export default {
 <style scoped>
 .sticky {
   position: fixed;
+  top:0;
   z-index: 5;
 }
 

@@ -59,7 +59,6 @@ export default {
       cardsFilterType: "",
       cardsSortType: "atk",
       showCards: 25,
-
     }
   },
   created() {
@@ -115,7 +114,6 @@ export default {
  
 <style scoped>
 .gallery {
-  /* width: 100%;  */
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
@@ -152,11 +150,5 @@ export default {
   margin: 50px;
 }
 
-
-/*@media screen and (max-width:400px) {
-  .gallery{
-    flex-direction: column;
-  }
-} */
 </style>
   

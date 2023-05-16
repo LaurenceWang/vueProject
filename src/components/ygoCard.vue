@@ -7,7 +7,6 @@
   </div>
 </router-link> 
 </template>
-
 <script>
 
 
@@ -32,13 +31,9 @@ a{
 }
 
 .card{
-  /* display:flex;
-  flex-direction: column;
-  justify-content: center; */
   padding :  20px 20px;
   margin : 20px;
   max-width: 12vw;
-  /*border : solid 1px;*/
   border-radius: 5%;
   overflow-wrap: break-word;
   -webkit-box-shadow: 0px 0px 34px -14px rgba(0,0,0,0.20); 
@@ -118,12 +113,6 @@ p{
   }
 
 } 
-
-/*@media screen and (max-width:400px) {
-  .card{
-    max-width: 50vw;
-  }
-} */
 
 
 </style>

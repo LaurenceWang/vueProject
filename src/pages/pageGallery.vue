@@ -1,24 +1,24 @@
 <template>
-	<navigationBar/>
-	<heroHeader/>
+	<pageNav/>
+	<pageHeader/>
 	<ygoGallery />
 	<pageFooter />
 </template>
   
 <script>
 
-import heroHeader from '@/components/heroHeader.vue';
-import navigationBar from '@/components/navigationBar.vue';
+import pageHeader from './pageAssets/pageHeader.vue';
+import pageNav from './pageAssets/pageNav.vue';
 import ygoGallery from '@/components/ygoGallery.vue'
-import pageFooter from '@/components/pageFooter.vue'
+import pageFooter from './pageAssets/pageFooter.vue'
 
 
 export default {
 	name: 'pageGallery',
 	components: {
 		ygoGallery,
-		heroHeader,
-		navigationBar,
+		pageHeader,
+		pageNav,
 		pageFooter
 	}
 }

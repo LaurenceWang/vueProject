@@ -62,16 +62,6 @@ import { getYGOData } from "@/services/api/ygoAPI.js"
 export default {
 	name: 'ygoCardGallery',
 
-	// computed:{
-	// 	/*detailCardData: function(){
-	// 		const detail = this.ygoData.filter(card => card.id == this.cardId )[0];
-	// 		return detail;
-	// 	},
-
-	// 	//
-	// },
-
-
 	data() {
 		return {
 			ygoData: [],
@@ -88,7 +78,6 @@ export default {
 			this.ygoData = await getYGOData();
 			this.ygoData = this.ygoData.filter(card => card.id == this.cardId)[0];
 			this.img = this.ygoData.card_images[0].image_url;
-
 		},
 
 	}
